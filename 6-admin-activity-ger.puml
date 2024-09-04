@@ -1,0 +1,33 @@
+@startuml
+start
+:Administrador faz login;
+:Selecionar Módulo de Gerenciamento;
+:Seleciona usuários;
+:Mostrar informações do usuário;
+
+if (Editar informações do usuário?) then (sim)
+  :Editar informações do usuário;
+  if (Salvar informações do usuário?) then (sim)
+    :Salvar informações do usuário;
+  else (não)
+    :Cancelar edição;
+  endif
+else (não)
+  :Voltar para a lista de usuários;
+endif
+
+:Seleciona Certificado;
+:Mostrar resumo das informações do certificado;
+
+if (Baixar certificado?) then (sim)
+  :Realizar download do certificado;
+else (não)
+  :Permitir editar informações do certificado;
+  if (Salvar informações do certificado?) then (sim)
+    :Salvar informações do certificado;
+  else (não)
+    :Cancelar edição;
+  endif
+endif
+stop
+@enduml

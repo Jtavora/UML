@@ -1,0 +1,19 @@
+@startuml
+component Sistema {
+  [Módulo de Certificados] --> [Módulo de Baixar]
+  [Módulo de Certificados] --> [Banco de Dados]
+  [Módulo de Gerenciamento] --> [Módulo de Usuários]
+  [Módulo de Gerenciamento] --> [Banco de Dados]
+  [Módulo de Gerenciamento] --> [Módulo de Gestão de Certificados]
+}
+
+component Cliente {
+  [Website] --> [Módulo de Certificados]
+}
+
+component Administrador {
+  [Painel Admin] --> [Módulo de Gerenciamento]
+  [Painel Admin] --> [Módulo de Certificados]
+}
+
+@enduml

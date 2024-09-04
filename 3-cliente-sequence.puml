@@ -1,0 +1,22 @@
+@startuml
+actor Cliente
+
+Cliente -> Sistema : fazerLogin()
+Sistema -> Sistema : validarCredenciais()
+Sistema --> Cliente : confirmaçãoLogin()
+
+Cliente -> Sistema : fazerCadastro()
+Sistema -> Sistema : validarCadastro()
+Sistema --> Cliente : confirmaçãoCadastro()
+
+Cliente -> Sistema : baixarCertificado()
+Sistema -> Certificado : iniciarDownload()
+Certificado --> Sistema : confirmaçãoDownload()
+Sistema --> Cliente : downloadConcluido()
+
+Cliente -> Sistema : visualizarCertificados()
+Sistema -> Certificado : obterCertificados()
+Certificado --> Sistema : listaDeCertificados()
+Sistema --> Cliente : mostrarCertificados()
+
+@enduml

@@ -1,0 +1,36 @@
+@startuml
+class Certificado {
+  +certificadoID: int
+  +clienteID: int
+  +data: Date
+  +cargaHoraria: Time
+  +disciplina: String
+  +professor: String
+  +curso: String
+}
+
+class Cliente {
+  +clienteID: int
+  +nome: String
+  +email: String
+  +telefone: String
+  +fazerLogin()
+  +fazerCadastro()
+  +baixarCertificado()
+  +visualizarCertificados()
+}
+
+class Administrador {
+  +administradorID: int
+  +email: String
+  +hashedPassword: String
+  +fazerLogin()
+  +criarCertificado()
+  +gerenciarCertificados()
+  +gerenciarUsuarios()
+}
+
+Cliente "1" --> "0..*" Certificado : "Possui >"
+Administrador "1" --> "0..*" Certificado : "Gerencia >"
+Administrador "1" --> "0..*" Cliente : "Gerencia >"
+@enduml

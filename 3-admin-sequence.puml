@@ -1,0 +1,28 @@
+@startuml
+actor Administrador
+
+Administrador -> Sistema : fazerLogin()
+Sistema -> Sistema : validarCredenciais()
+Sistema --> Administrador : confirmaçãoLogin()
+
+Administrador -> Sistema : baixarCertificado()
+Sistema -> Certificado : iniciarDownload()
+Certificado --> Sistema : confirmaçãoDownload()
+Sistema --> Administrador : downloadConcluido()
+
+Administrador -> Sistema : criarCertificado()
+Sistema -> Certificado : armazenarCertificado()
+Certificado --> Sistema : confirmaçãoCriacao()
+Sistema --> Administrador : certificadoCriado()
+
+Administrador -> Sistema : gerenciarCertificados()
+Sistema -> Certificado : obterListaCertificados()
+Certificado --> Sistema : listaDeCertificados()
+Sistema --> Administrador : mostrarCertificados()
+
+Administrador -> Sistema : gerenciarUsuarios()
+Sistema -> Clientes : obterListaUsuarios()
+Clientes --> Sistema : listaDeUsuarios()
+Sistema --> Administrador : mostrarUsuarios()
+
+@enduml

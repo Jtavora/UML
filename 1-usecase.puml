@@ -1,0 +1,26 @@
+@startuml
+!define RECTANGLE class
+
+package "Sistema de Certificados Online" {
+
+  actor Cliente
+  actor Administrador
+  
+  usecase "Fazer login" as UC0
+  usecase "Baixar certificado" as UC1
+  usecase "Visualizar certificados" as UC4
+  usecase "Gerenciar certificados" as UC2
+  usecase "Gerenciar usuários" as UC3
+  usecase "Criar certificado" as UC5
+  
+  Cliente --> UC0
+  Cliente --> UC4
+  Cliente --> UC1
+  Administrador --> UC0
+  Administrador --> UC2
+  Administrador --> UC3
+  Administrador --> UC5
+  
+}
+
+@enduml

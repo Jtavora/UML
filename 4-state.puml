@@ -1,0 +1,25 @@
+@startuml
+[*] --> CadastroUsuario : Novo Cliente
+
+state CadastroUsuario {
+  [*] --> PreenchendoDadosCliente
+  PreenchendoDadosCliente --> DadosClienteSalvos : Cliente cadastrado
+  DadosClienteSalvos --> [*]
+}
+
+CadastroUsuario --> PreenchendoCertificado : Administrador cria certificado
+
+state PreenchendoCertificado {
+  [*] --> PreenchendoDadosCertificado
+  PreenchendoDadosCertificado --> CertificadoCriado : Informações do certificado preenchidas
+  CertificadoCriado --> [*]
+}
+
+PreenchendoCertificado --> CertificadoBaixado : Cliente baixou certificado
+
+state CertificadoBaixado {
+  [*] --> CertificadoBaixado
+  CertificadoBaixado --> [*]
+}
+
+@enduml

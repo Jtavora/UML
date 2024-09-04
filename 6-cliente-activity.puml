@@ -1,0 +1,13 @@
+@startuml
+start
+:Cliente faz login;
+:Selecionar Certificado;
+:Mostrar resumo das informações do certificado;
+
+if (Baixar certificado?) then (sim)
+  :Realizar download do certificado;
+else (não)
+  :Voltar para a lista de certificados;
+endif
+stop
+@enduml
